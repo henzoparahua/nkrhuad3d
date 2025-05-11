@@ -128,10 +128,20 @@ LRESULT CALLBACK SystemClass::MessageHandler(HWND hwnd, UINT umsg, WPARAM wparam
 	}
 }
 
+//	Initialize and draw the window the screen size is set to the full screen or to the height and width written.
 void SystemClass::InitializeWindows(int& scrnWidth, int& scrnHeight)
 {
+//	WNDCLASSEX is a structure in Windows programming that contains information about 
+//	a window class. It is used with the RegisterClassEx function to register a window 
+//	class, which defines the attributes of a window such as its style, icon, cursor, 
+//	menu, and window procedure.
 	WNDCLASSEX wc;
+
+//	DEVMODE is a structure in Windows programming that contains information about the display device.
+//	It is used with the ChangeDisplaySettings function to change the display settings of the device,
+//	such as screen resolution, color depth, and refresh rate.
 	DEVMODE dmScreenSettings;
+
 	int posX, posY;
 
 	ApplicationHandle = this;
@@ -152,6 +162,9 @@ void SystemClass::InitializeWindows(int& scrnWidth, int& scrnHeight)
 	wc.lpszClassName = m_applicationName;
 	wc.cbSize = sizeof(WNDCLASSEX);
 
+//	After populating the WNDCLASSEX structure, it is passed to the RegisterClassEx function to 
+//	register the class. This allows the application to create windows of that class, which will
+//	inherit the attributes defined in the WNDCLASSEX structure.
 	RegisterClassEx(&wc);
 
 	scrnHeight = GetSystemMetrics(SM_CYSCREEN);
@@ -159,6 +172,7 @@ void SystemClass::InitializeWindows(int& scrnWidth, int& scrnHeight)
 
 	if (FULL_SCREEN)
 	{
+//		memset is a function in C and C++ that fills a block of memory with a specified value.
 		memset(&dmScreenSettings, 0, sizeof(dmScreenSettings));
 		dmScreenSettings.dmSize = sizeof(dmScreenSettings);
 		dmScreenSettings.dmPelsWidth = (unsigned long)scrnWidth;
@@ -169,15 +183,16 @@ void SystemClass::InitializeWindows(int& scrnWidth, int& scrnHeight)
 		ChangeDisplaySettings(&dmScreenSettings, CDS_FULLSCREEN);
 
 		posX = posY = 0;
-	}
-	else {
+	} else 	{
 		scrnWidth = 1280;
 		scrnHeight = 720;
 
 		posX = (GetSystemMetrics(SM_CXSCREEN) - scrnWidth) / 2;
 		posY = (GetSystemMetrics(SM_CYSCREEN) - scrnHeight) / 2;
 	}
-
+		
+//	CreateWindowEx is a function that creates an overlapped, pop-up, or child window.
+//	It is used to create a window with extended styles, such as WS_EX_TOPMOST or WS_EX_LAYERED.
 	m_hwnd = CreateWindowEx(WS_EX_APPWINDOW, m_applicationName, m_applicationName,
 		WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_POPUP,
 		posX, posY, scrnWidth, scrnHeight, NULL, NULL, m_hinstance, NULL);
