@@ -24,6 +24,9 @@
     <ClInclude Include="header\inputclass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="header\d3dclass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -36,6 +39,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="source\systemclass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\d3dclass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

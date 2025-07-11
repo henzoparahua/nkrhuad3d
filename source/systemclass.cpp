@@ -172,7 +172,7 @@ void SystemClass::InitializeWindows(int& scrnWidth, int& scrnHeight)
 
 	if (FULL_SCREEN)
 	{
-//		memset is a function in C and C++ that fills a block of memory with a specified value.
+//		memset is a function that fills a block of memory with a specified value.
 		memset(&dmScreenSettings, 0, sizeof(dmScreenSettings));
 		dmScreenSettings.dmSize = sizeof(dmScreenSettings);
 		dmScreenSettings.dmPelsWidth = (unsigned long)scrnWidth;
