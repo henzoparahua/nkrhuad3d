@@ -1,4 +1,4 @@
-#include "../header/d3dclass.h"
+#include "d3dclass.h"
 
 D3DClass::D3DClass()
 {

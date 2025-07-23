@@ -1,4 +1,4 @@
-#include "../header/systemclass.h"
+#include "systemclass.h"
 
 SystemClass::SystemClass()
 {
@@ -207,13 +207,12 @@ void SystemClass::InitializeWindows(int& scrnWidth, int& scrnHeight)
 		sizeof(corner_preference)
 	);
 
-//	Show the Window and focus it.
+//	Show the Window and stuff.
 	ShowWindow(m_hwnd, SW_SHOW);
 	SetForegroundWindow(m_hwnd);
 	SetFocus(m_hwnd);
 
 	ShowCursor(false);
-
 
 	return;
 }

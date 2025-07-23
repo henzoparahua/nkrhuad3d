@@ -1,4 +1,4 @@
-#include "../header/applicationclass.h"
+#include "applicationclass.h"
 
 ApplicationClass::ApplicationClass()
 {

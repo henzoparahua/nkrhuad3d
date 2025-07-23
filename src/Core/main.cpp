@@ -1,4 +1,4 @@
-#include "header/systemclass.h"
+#include "../Win/systemclass.h"
 
 int WINAPI wWinMain(HINSTANCE hinstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLine, int iCmdshow)
 {

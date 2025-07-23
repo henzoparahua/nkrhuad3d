@@ -1,4 +1,4 @@
-#include "../header/inputclass.h"
+#include "inputclass.h"
 
 InputClass::InputClass()
 {

@@ -15,33 +15,33 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="header\applicationclass.h">
+    <ClInclude Include="src\Win\applicationclass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="header\systemclass.h">
+    <ClInclude Include="src\Win\systemclass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="header\inputclass.h">
+    <ClInclude Include="src\Win\inputclass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="header\d3dclass.h">
+    <ClInclude Include="src\Graphics\d3dclass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="src\Core\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\applicationclass.cpp">
+    <ClCompile Include="src\Win\applicationclass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\inputclass.cpp">
+    <ClCompile Include="src\Win\inputclass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\systemclass.cpp">
+    <ClCompile Include="src\Win\systemclass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\d3dclass.cpp">
+    <ClCompile Include="src\Graphics\d3dclass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
