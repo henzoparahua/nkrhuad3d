@@ -1,4 +1,28 @@
-The wWinMain is the conventional name for the application entry point in a Windows Application. It initializes the app, displays its main window and enters a message retrieval-and-dispatch loop at the top-level control structure for the remainder of the application’s execution. 
+## Main.cpp
+```cpp
+#include "../Win/systemclass.h"
+
+int WINAPI wWinMain(HINSTANCE hinstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLine, int iCmdshow)
+{
+	SystemClass* System;
+	bool result;
+
+	System = new SystemClass;
+
+	result = System->Initialize();
+	if (result)
+	{
+		System->Run();
+	}
+
+	System->Shutdown();
+	delete System;
+	System = 0;
+
+	return 0;
+}
+```
+The [wWinMain](https://learn.microsoft.com/pt-br/windows/win32/api/winbase/nf-winbase-winmain) is the conventional name for the application entry point in a Windows Application. It initializes the app, displays its main window and enters a message retrieval-and-dispatch loop at the top-level control structure for the remainder of the application’s execution. 
 
 This is the heart of a Windows application event-driven architecture. 
 
