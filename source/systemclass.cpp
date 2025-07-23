@@ -197,11 +197,23 @@ void SystemClass::InitializeWindows(int& scrnWidth, int& scrnHeight)
 		WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_POPUP,
 		posX, posY, scrnWidth, scrnHeight, NULL, NULL, m_hinstance, NULL);
 
+
+//	Change the window style to a round stylish-fucking-fashion because its super cool.
+	DWM_WINDOW_CORNER_PREFERENCE corner_preference = DWMWCP_ROUND;
+	HRESULT hr = DwmSetWindowAttribute(
+		m_hwnd,
+		DWMWA_WINDOW_CORNER_PREFERENCE,
+		&corner_preference,
+		sizeof(corner_preference)
+	);
+
+//	Show the Window and focus it.
 	ShowWindow(m_hwnd, SW_SHOW);
 	SetForegroundWindow(m_hwnd);
 	SetFocus(m_hwnd);
 
 	ShowCursor(false);
+
 
 	return;
 }

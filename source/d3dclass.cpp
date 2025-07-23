@@ -548,8 +548,8 @@ void D3DClass::GetOrthoMatrix(XMMATRIX& orthoMatrix)
 	return;
 }
 
-//	The helper function returns by reference the name of the video card and the amount of video memory. Knowing the video
-//	card name can help in debugging on different configurations.
+//	The helper function returns by reference the name of the video card and the amount of video memory. 
+//	Knowing the video card name can help in debugging on different configurations.
 
 void D3DClass::GetVideoCardInfo(char* cardName, int& memory)
 {
