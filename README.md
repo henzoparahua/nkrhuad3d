@@ -10,4 +10,8 @@ subgraph Win
 	WinSystem --> WinApplication["Application Class"]
 	WinSystem --> WinInput["Input Class"]
 end
+WinApplication --> GraphicsD3D
+subgraph Graphics
+	GraphicsD3D["D3D"]
+end
 ```
